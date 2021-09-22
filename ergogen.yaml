@@ -140,11 +140,11 @@ outlines:
     full:
       - type: keys
         side: left
-        size: 25
+        size: 26
         corner: 3
       - type: keys
         side: left
-        size: 22
+        size: 23
         corner: 3
         operation: subtract
 cases:
