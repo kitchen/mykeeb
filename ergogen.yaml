@@ -1,4 +1,9 @@
 points:
+  rotate: -30
+  mirror:
+    ref: matrix_inner_top
+    distance: 25
+
   zones:
     matrix:
       columns:
@@ -18,7 +23,7 @@ points:
               column_net: P5
         ring:
           spread: u
-          stagger: 17/2
+          stagger: 17/3
           rotate: -10
           origin: [0, -17]
           rows:
@@ -87,12 +92,6 @@ points:
             params:
               keycaps: true
               hotswap: true
-      rows:
-        bottom:
-          padding: 17
-        home:
-          padding: 17
-        top:
     thumb:
       anchor:
         ref: matrix_inner_bottom
@@ -126,31 +125,56 @@ points:
               keycaps: true
               hotswap: true
 outlines:
+  glue:
+    unibody:
+      top:
+        left:
+          ref: matrix_inner_top
+          rotate: 45
+        right:
+          ref: mirror_matrix_inner_top
+          rotate: -45
+      bottom:
+        left:
+          ref: thumb_first_only
+          rotate: 45
+        right:
+          ref: mirror_thumb_first_only
+          rotate: -45
+
   exports:
     plate:
       - type: keys
-        side: left
+        side: both
         size: 25
         corner: 3
+        glue: unibody
       - type: keys
-        side: left
+        side: both
         size: 14
         bound: false
         operation: subtract
+
     full:
       - type: keys
-        side: left
+        side: both
         size: 26
         corner: 3
+        glue: unibody
       - type: keys
-        side: left
+        side: both
         size: 23
         corner: 3
         operation: subtract
 cases:
+  architeuthis_plate:
+    - type: outline
+      name: plate
+      extrude: 1.5
   architeuthis_dux:
     - type: outline
       name: plate
+      extrude: 1.5
     - type: outline
       name: full
-      extrude: 5
+      extrude: 10
