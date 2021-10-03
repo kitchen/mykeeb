@@ -3,10 +3,8 @@
 
 # Things to figure out...
 
-## ...in Ergogen
-
-1. how to add a gap for the USB port?
-
-## ...with the 3D printer
-
-1. print up a fake nice!nano for wire length gauging
+## running todo list
+- [ ] power switch hole
+- [ ] usb port hole
+- [ ] row_net
+- [ ] col_net
