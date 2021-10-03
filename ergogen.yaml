@@ -125,56 +125,85 @@ points:
               keycaps: true
               hotswap: true
 outlines:
-  glue:
-    unibody:
-      top:
-        left:
-          ref: matrix_inner_top
-          rotate: 45
-        right:
-          ref: mirror_matrix_inner_top
-          rotate: -45
-      bottom:
-        left:
-          ref: thumb_first_only
-          rotate: 45
-        right:
-          ref: mirror_thumb_first_only
-          rotate: -45
-
   exports:
-    plate:
-      - type: keys
-        side: both
-        size: 25
-        corner: 3
-        glue: unibody
-      - type: keys
-        side: both
-        size: 14
-        bound: false
-        operation: subtract
+    experiment_glue:
+      - type: polygon
+        points:
+          - ref: matrix_inner_top
+          - ref: mirror_matrix_inner_top
+          - ref: mirror_thumb_first_only
+          - ref: thumb_first_only
+    experiment_glue_subtract:
+      - type: polygon
+        points:
+          - ref: matrix_inner_top
+            shift: [0, -2.5]
+          - ref: mirror_matrix_inner_top
+            shift: [0, -2.5]
+          - ref: mirror_thumb_first_only
+            shift: [0, 3]
+          - ref: thumb_first_only
+            shift: [0, 3]
 
-    full:
+    case_sides:
       - type: keys
-        side: both
+        side: left
         size: 26
         corner: 3
-        glue: unibody
       - type: keys
-        side: both
+        side: right
+        size: 26
+        corner: 3
+      - type: outline
+        name: experiment_glue
+      - type: keys
+        side: left
         size: 23
         corner: 3
         operation: subtract
+      - type: keys
+        side: right
+        size: 23
+        corner: 3
+        operation: subtract
+      - type: outline
+        name: experiment_glue_subtract
+        operation: subtract
+
+    plate_additive:
+      - type: keys
+        side: left
+        size: 25
+        corner: 3
+      - type: keys
+        side: right
+        size: 25
+        corner: 3
+      - type: outline
+        name: experiment_glue
+
+    plate_subtract:
+      - type: keys
+        side: left
+        size: 14
+        bound: false
+      - type: keys
+        side: right
+        size: 14
+        bound: false
+
+    experiment_plate:
+      - type: outline
+        name: plate_additive
+      - type: outline
+        name: plate_subtract
+        operation: subtract
+
 cases:
-  architeuthis_plate:
+  architeuthis_experiment:
     - type: outline
-      name: plate
-      extrude: 1.5
-  architeuthis_dux:
-    - type: outline
-      name: plate
+      name: experiment_plate
       extrude: 1.5
     - type: outline
-      name: full
-      extrude: 10
+      name: case_sides
+      extrude: 15
