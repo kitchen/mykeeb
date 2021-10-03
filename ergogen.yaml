@@ -126,16 +126,18 @@ points:
               hotswap: true
 outlines:
   exports:
-    experiment_glue:
+    glue:
       - type: polygon
         points:
           - ref: matrix_inner_top
           - ref: mirror_matrix_inner_top
           - ref: mirror_thumb_first_only
           - ref: thumb_first_only
-    experiment_glue_subtract:
+    glue_subtract:
       - type: polygon
         points:
+          # ref thumb_first_only + mirror_thumb_first_only / 2 + 2.5
+          # ref thumb_first_only + mirror_thumb_first_only / 2 - 2.5
           - ref: matrix_inner_top
             shift: [0, -2.5]
           - ref: mirror_matrix_inner_top
@@ -155,7 +157,7 @@ outlines:
         size: 26
         corner: 3
       - type: outline
-        name: experiment_glue
+        name: glue
       - type: keys
         side: left
         size: 23
@@ -167,7 +169,7 @@ outlines:
         corner: 3
         operation: subtract
       - type: outline
-        name: experiment_glue_subtract
+        name: glue_subtract
         operation: subtract
 
     plate_additive:
@@ -180,7 +182,7 @@ outlines:
         size: 25
         corner: 3
       - type: outline
-        name: experiment_glue
+        name: glue
 
     plate_subtract:
       - type: keys
@@ -192,7 +194,7 @@ outlines:
         size: 14
         bound: false
 
-    experiment_plate:
+    plate:
       - type: outline
         name: plate_additive
       - type: outline
@@ -200,9 +202,9 @@ outlines:
         operation: subtract
 
 cases:
-  architeuthis_experiment:
+  kitchendux:
     - type: outline
-      name: experiment_plate
+      name: plate
       extrude: 1.5
     - type: outline
       name: case_sides
