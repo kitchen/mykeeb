@@ -118,8 +118,6 @@ outlines:
     glue_subtract:
       - type: polygon
         points:
-          # ref thumb_first_only + mirror_thumb_first_only / 2 + 2.5
-          # ref thumb_first_only + mirror_thumb_first_only / 2 - 2.5
           - ref: matrix_inner_top
             shift: [0, -2.5]
           - ref: mirror_matrix_inner_top
@@ -128,6 +126,26 @@ outlines:
             shift: [0, 3]
           - ref: thumb_first_only
             shift: [0, 3]
+
+    usb_port_hole:
+      - type: polygon
+        points:
+          - ref:
+              - thumb_first_only
+              - mirror_thumb_first_only
+            shift: [5, -1]
+          - ref:
+              - thumb_first_only
+              - mirror_thumb_first_only
+            shift: [-5, -1]
+          - ref:
+              - thumb_first_only
+              - mirror_thumb_first_only
+            shift: [-5, 2.5]
+          - ref:
+              - thumb_first_only
+              - mirror_thumb_first_only
+            shift: [5, 2.5]
 
     case_sides:
       - type: keys
@@ -191,3 +209,8 @@ cases:
     - type: outline
       name: case_sides
       extrude: 15
+    - type: outline
+      name: usb_port_hole
+      extrude: 8
+      operation: subtract
+      shift: [0, 0, 3]
