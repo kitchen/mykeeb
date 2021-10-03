@@ -14,28 +14,22 @@ points:
           rows:
             bottom:
               bind: [5, 0, 0, 0]
-              column_net: P7
             home:
               bind: [0, 12, 0, 0]
-              column_net: P6
             top:
               bind: [0, 8, 5, 0]
-              column_net: P5
         ring:
           spread: u
-          stagger: 17/3
+          stagger: 17/2
           rotate: -10
           origin: [0, -17]
           rows:
             bottom:
               bind: [0, 0, 2, 10]
-              column_net: P4
             home:
               bind: [5, 0, 5, 0]
-              column_net: P3
             top:
               bind: [0, 5, 0, 0]
-              column_net: P0
         middle:
           spread: u
           stagger: 17/3
@@ -44,13 +38,10 @@ points:
           rows:
             bottom:
               bind: [0, 10, 0, 5]
-              column_net: P1
             home:
               bind: 5
-              column_net: P19
             top:
               bind: [0, 0, 0, 0]
-              column_net: P18
           key:
             shift: [0.2, 0]
         index:
@@ -61,13 +52,10 @@ points:
           rows:
             bottom:
               bind: [0, 5, 0, 0]
-              column_net: P15
             home:
               bind: [5, 0, 5, 0]
-              column_net: P14
             top:
               bind: [0, 0, 0, 6]
-              column_net: P16
         inner:
           spread: u
           stagger: -17/6
@@ -75,20 +63,17 @@ points:
           rows:
             bottom:
               bind: [5, 0, 20, 2]
-              column_net: P10
             home:
               bind: [0, 0, 0, 5]
-              column_net: P20
             top:
               bind: [0, 0, 5, 5]
-              column_net: P21
       key:
         footprints:
           mx:
             type: mx
-            nets:
-              from: =column_net
-              to: GND
+            # nets:
+            #   from: =column_net
+            #   to: GND
             params:
               keycaps: true
               hotswap: true
@@ -118,9 +103,6 @@ points:
         footprints:
           mx:
             type: mx
-            nets:
-              from: =column_net
-              to: GND
             params:
               keycaps: true
               hotswap: true
