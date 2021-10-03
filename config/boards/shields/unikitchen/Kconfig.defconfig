@@ -1,0 +1,9 @@
+if SHIELD_UNIKITCHEN
+
+config ZMK_KEYBOARD_NAME
+    default "kitchen unibody"
+
+config ZMK_USB
+    default y
+
+endif

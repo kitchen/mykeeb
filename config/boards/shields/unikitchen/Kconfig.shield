@@ -1,0 +1,3 @@
+
+config SHIELD_UNIKITCHEN
+       def_bool $(shields_list_contains,unikitchen)
