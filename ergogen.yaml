@@ -1,8 +1,8 @@
 points:
-  rotate: -30
+  rotate: -25
   mirror:
     ref: matrix_inner_top
-    distance: 25
+    distance: 30
 
   zones:
     matrix:
@@ -119,9 +119,9 @@ outlines:
       - type: polygon
         points:
           - ref: matrix_inner_top
-            shift: [0, -2.5]
+            shift: [0, 2.5]
           - ref: mirror_matrix_inner_top
-            shift: [0, -2.5]
+            shift: [0, 2.5]
           - ref: mirror_thumb_first_only
             shift: [0, 3]
           - ref: thumb_first_only
