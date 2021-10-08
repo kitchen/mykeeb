@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+    shell:
+        build:
+            dockerfile: Dockerfile
+        volumes:
+            - $PWD:/config
+    reloader:
+        build:
+            dockerfile: Dockerfile
+        volumes:
+            - $PWD:/config
+        command: npm run watch
